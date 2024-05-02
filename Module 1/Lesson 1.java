@@ -1,6 +1,10 @@
-### Practice 1
+// Practice 1
 
-## Task 28
+
+// Task 28
+// Write a program in which I enter the number a. 
+// If the number a is even, the program outputs true, otherwise false.
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +16,11 @@ public class Main {
     }
 }
 
-## Task 29
+
+// Task 29
+// Write a program in which I enter integers a, b, c. 
+// If there is a triangle with sides a, b, c, then the program will output true, otherwise false.
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -28,7 +36,11 @@ public class Main {
     }
 }
 
-## Task 30
+
+// Task 30
+// A three-digit number is given. 
+// Print first its last digit (units), and then its average digit (tens).
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
