@@ -1,4 +1,5 @@
 // Practice 1
+// Arrays, one-dimensional arrays, using a loop for arrays
 
 
 // Task 24

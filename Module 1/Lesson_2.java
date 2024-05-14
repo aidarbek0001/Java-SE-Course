@@ -1,4 +1,5 @@
 // Practice 1
+// if, if-else, else if
 
 
 // Task 25

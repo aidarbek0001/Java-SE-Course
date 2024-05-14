@@ -1,4 +1,5 @@
 // Practice 1
+// Library installation, variables, basic operators, Scanner class
 
 
 // Task 28
