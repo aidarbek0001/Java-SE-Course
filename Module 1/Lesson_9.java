@@ -55,6 +55,8 @@ public class Main {
     }
 }
 
+
+
 public class User {
     protected int id;
     protected String login;
@@ -108,6 +110,8 @@ public class User {
     }
 }
 
+
+
 public class Staff extends User{
     private double salary;
     private String[] subjects = new String[100];
@@ -152,6 +156,8 @@ public class Staff extends User{
 
     }
 }
+
+
 
 public class Student extends User{
     private double gpa;
@@ -199,5 +205,104 @@ public class Student extends User{
 
 
 
+// Task 2
+// Create a menu for the first assignment where you manage students, workers, and users.
+// (Hint: The student or worker output filter needs to be implemented using the keyword: instanceof)
+
+// PRESS [1] ADD USER
+//     PRESS [1] TO ADD STUDENT    
+//     PRESS [2] TO ADD STAFF
+ 
+// PRESS [2] TO LIST USERS
+//     PRESS [1] TO LIST STUDENTS
+//     PRESS [2] TO LIST STAFF
+
+// PRESS [0] TO EXIT
+
+ 
+
+
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        boolean process = true;
+        int num;
+        int num1;
+        int num2;
+        int k = 0;
+        User[] user = new User[9999999];
+        Student[] student = new Student[9999999];
+        Staff[] staff = new Staff[9999999];
+        do {
+            System.out.println("\nPRESS [1] TO ADD USER \nPRESS [2] TO LIST USERS \nPRESS [0] TO EXIT");
+            num = in.nextInt();
+            if (num == 1) {
+                System.out.println("\nPRESS [1] TO ADD STUDENT \nPRESS [2] TO ADD STAFF");
+                num1 = in.nextInt();
+                if (num1 == 1) {
+                    System.out.println("Insert ID:");
+                    int id = in.nextInt();
+                    System.out.println("Insert Login:");
+                    String login = in.next();
+                    System.out.println("Insert Password:");
+                    String password = in.next();
+                    System.out.println("Insert name:");
+                    String name = in.next();
+                    System.out.println("Insert surname:");
+                    String surname = in.next();
+                    System.out.println("Insert GPA:");
+                    double gpa = in.nextDouble();
+                    user[k] = new Student(id, login, password, name, surname, gpa);
+                    k++;
+                } else if (num1 == 2) {
+                    System.out.println("Insert ID:");
+                    int id = in.nextInt();
+                    System.out.println("Insert Login:");
+                    String login = in.next();
+                    System.out.println("Insert Password:");
+                    String password = in.next();
+                    System.out.println("Insert name:");
+                    String name = in.next();
+                    System.out.println("Insert surname:");
+                    String surname = in.next();
+                    System.out.println("Insert salary:");
+                    int salary = in.nextInt();
+                    user[k] = new Staff(id, login, password, name, surname, salary);
+                    k++;
+                }else {
+                    System.out.println("Enter a valid number!");
+                }
+            } else if (num == 2) {
+                System.out.println("\nPRESS [1] TO LIST STUDENTS \nPRESS [2] TO LIST STAFF");
+                num2 = in.nextInt();
+                if(num2 == 1) {
+                    System.out.println("\nList of students:");
+                    for (int i = 0; i < k; i++) {
+                        if (user[i] instanceof Student){
+                            System.out.println(user[i].getdata());
+                        }
+                    }
+                } else if (num2 == 2) {
+                    System.out.println("\nList of staff:");
+                    for (int i = 0; i < k; i++) {
+                        if (user[i] instanceof Staff){
+                            System.out.println(user[i].getdata());
+                        }
+                    }
+                }else {
+                    System.out.println("Enter a valid number!");
+                }
+            } else if (num == 0) {
+                System.out.println("Exiting..");
+                process = false;
+            } else {
+                System.out.println("Enter a valid number!");
+            }
+        } while (process);
+    }
+}
 
 
