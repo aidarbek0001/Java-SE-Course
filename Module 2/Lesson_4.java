@@ -55,7 +55,7 @@ public class Main{
                 case "2": {
                     ArrayList<User1> users = getUsersList();
                     for (int i = 0; i < users.size(); i++) {
-                        System.out.println((i + 1) + ") " + users.get(i)); // Выводим данные игрока в красивом формате, с нумерацией
+                        System.out.println((i + 1) + ") " + users.get(i)); 
                     }
                     break;
                 }
